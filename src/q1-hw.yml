@@ -1,0 +1,10 @@
+name: HomeWork
+
+on: push
+
+jobs:
+  question 1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Hello Swapnil You pushed to main from repository ${{ github.repository }} at $(date '+%Y-%m-%d %H:%M %Z')"
