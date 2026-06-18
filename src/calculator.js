@@ -3,7 +3,7 @@ function add(a, b) {
 }
 
 function subtract(a, b) {
-    const neg = (~b + 1) | 0;
+    const neg = ~b + 1; // -b
     let sum = a;
     let carry = neg;
     while (carry) {
@@ -11,7 +11,7 @@ function subtract(a, b) {
         carry = (sum & carry) << 1;
         sum = next;
     }
-    return (sum - ((a & b) >>> 5)) | 0;
+    return sum; // no extra subtraction
 }
 
 function multiply(a, b) {
