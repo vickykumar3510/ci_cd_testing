@@ -1,24 +1,10 @@
-name: Calculator Deployment
-
-on: push
-
+name: Handle Issues
+on:
+  issues:
+    types: [opened, edited]
 jobs:
-  test:
+  log-issue:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
-      - run: node src/calculator.test.js
-
-      - if: success()
-        run: echo "✅ Ready for deployment"
-
-      - if: failure()
-        run: echo "❌ Deployment blocked because tests failed"
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - run: echo "Deploying application..."
+      - name: Output issue details
+        run: echo "${{ toJSON(github.event) }}"
