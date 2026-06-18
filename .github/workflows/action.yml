@@ -1,10 +1,10 @@
-name: Handle Issues
-on:
-  issues:
-    types: [opened, edited]
+name: HomeWork
+
+on: push
+
 jobs:
-  log-issue:
+  question 1:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Output issue details
-        run: echo "${{ toJSON(github.event) }}"
+      - run: echo "Hello Swapnil You pushed to main from repository ${{ github.repository }} at $(date '+%Y-%m-%d %H:%M %Z')"
