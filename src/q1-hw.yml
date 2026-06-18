@@ -3,7 +3,7 @@ name: HomeWork
 on: push
 
 jobs:
-  question 1:
+  question-1:
     runs-on: ubuntu-latest
 
     steps:
